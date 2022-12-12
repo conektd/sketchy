@@ -58,10 +58,11 @@ class SmoothPalette {
 	}
 	
 	_amt(pos) {
-    return (pos * (this.colors.length-1)) % 1;
+    		return (pos * (this.colors.length-1)) % 1;
 	}
 	
 	_startIndex(pos) {
-		return Math.floor(map(pos, 0, 1, 0, this.colors.length-1));
+		const i = Math.floor(map(pos, 0, 1, 0, this.colors.length-1));
+		return constrain(i, 0, this.colors.length-2);
 	}
 }
