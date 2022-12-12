@@ -36,7 +36,7 @@ const PALETTES = [
   ],
 ];
 
-export class SmoothPalette {
+class SmoothPalette {
 	jitter = 0;
 	
 	constructor(colors) {
