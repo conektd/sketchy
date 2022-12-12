@@ -40,7 +40,7 @@ class SmoothPalette {
 	jitter = 0;
 	
 	constructor(colors) {
-		this.colors = colors;
+		this.colors = colors.map(c => color(c));
 		this.memo = new Map();
 	}
 		
