@@ -1,4 +1,4 @@
-class Draggable {
+lass Draggable {
   width;
   height;
   x;
@@ -18,13 +18,13 @@ class Draggable {
     this.width = w ?? 100;
     this.height = h ?? 100;
 
-    cnv.mousePressed(() => {
+    cnv.elt.addEventListener("mousedown", () => {
       this.onMousePressed();
     });
-    cnv.mouseMoved(() => {
+    cnv.elt.addEventListener("mousemove", () => {
       this.onMouseMoved();
     });
-    cnv.mouseReleased(() => {
+    cnv.elt.addEventListener("mouseup", () => {
       this.onMouseReleased();
     });
   }
@@ -44,14 +44,14 @@ class Draggable {
       if (!this.wasUnderMouse) {
         this.wasUnderMouse = true;
         this.onMouseOver(this);
+        cursor(HAND);
       }
-      cursor(HAND);
     } else {
       if (this.wasUnderMouse) {
         this.wasUnderMouse = false;
         this.onMouseOut(this);
+        cursor(ARROW);
       }
-      cursor(ARROW);
     }
 
     if (this.isDragging) {
