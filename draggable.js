@@ -1,4 +1,4 @@
-lass Draggable {
+class Draggable {
   width;
   height;
   x;
