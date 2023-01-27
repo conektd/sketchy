@@ -34,13 +34,6 @@ const PALETTES = [
     '#F3B562',
     '#F06060',
   ],
-  [
-    '#162E25',
-    '#287A70',
-    '#7A577A',
-    '#7A6D31',
-    '#1E232E',
-  ],
 ];
 
 class SmoothPalette {
