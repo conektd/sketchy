@@ -28,6 +28,10 @@ class Palette {
   getRandom() {
     return this.getSmooth(random(1));
   }
+  
+  isReady() {
+    return this.keyColors.length > 0;
+  }
 
   _amt(pos) {
     return (pos * (this.keyColors.length - 1)) % 1;
