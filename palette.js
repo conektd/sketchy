@@ -51,7 +51,7 @@ class BetterColor {
   }
   
   get levels() {
-    this._color.levels;
+    return this._color.levels;
   }
 
   toString(format) {
