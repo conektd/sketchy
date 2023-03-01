@@ -2,7 +2,7 @@ class Palette {
   smoothingJitter = 0;
 
   constructor(keyColors) {
-    this.keyColors = keyColors.map((c) => new BetterColor(color(c)));
+    this.keyColors = keyColors.map((c) => color(c));
     this.memo = new Map();
   }
 
@@ -43,34 +43,28 @@ class Palette {
   }
 }
 
-class BetterColor {
-  _color;
+function adjustHSB(c, {h, s, b, a}) {
+	push()
+	colorMode(HSB);
+	const newColor = color(
+		h ?? hue(c),
+		s ?? saturation(c),
+		b ?? brightness(b),
+		a ?? alpha(c),
+	);
+	pop();
+	return newColor;
+}
 
-  constructor(c) {
-   this._color = c;
-  }
-  
-  get levels() {
-    return this._color.levels;
-  }
-
-  toString(format) {
-    return this._color.toString(format);
-  }
-
-  setRed(newRed) {
-   this._color.setRed(newRed);
-  }
-
-  setGreen(newGreen) {
-    this._color.setGreen(newGreen);
-  }
-
-  setBlue(newBlue) {
-    this._color.setBlue(newBlue);
-  }
-
-  setAlpha(newAlpha) {
-    this._color.setAlpha(newAlpha);
-  }
+function offsetHSB(c, {h, s, b, a}) {
+	push();
+	colorMode(HSB);
+	const newColor = color(
+		h ? hue(c) + h : hue(c),
+		s ? saturation(c) + s : saturation(c),
+		b ? brightness(c) + b : brightness(c),
+		a ? alpha(c) + a : alpha(c),
+	);
+	pop();
+	return newColor;
 }
