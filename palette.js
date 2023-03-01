@@ -43,26 +43,26 @@ class Palette {
   }
 }
 
-function adjustHSB(c, {h, s, b, a}) {
+function setHSL(c, {h, s, l, a}) {
 	push()
-	colorMode(HSB);
+	colorMode(HSL, 360, 100, 100, 1);
 	const newColor = color(
 		h ?? hue(c),
 		s ?? saturation(c),
-		b ?? brightness(b),
+		l ?? lightness(c),
 		a ?? alpha(c),
 	);
 	pop();
 	return newColor;
 }
 
-function offsetHSB(c, {h, s, b, a}) {
+function offsetHSL(c, {h, s, l, a}) {
 	push();
-	colorMode(HSB);
+	colorMode(HSL, 360, 100, 100, 1);
 	const newColor = color(
 		h ? hue(c) + h : hue(c),
 		s ? saturation(c) + s : saturation(c),
-		b ? brightness(c) + b : brightness(c),
+		l ? lightness(c) + l : lightness(c),
 		a ? alpha(c) + a : alpha(c),
 	);
 	pop();
