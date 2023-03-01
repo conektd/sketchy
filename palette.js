@@ -2,7 +2,7 @@ class Palette {
   smoothingJitter = 0;
 
   constructor(keyColors) {
-    this.keyColors = keyColors.map((c) => color(c));
+    this.keyColors = keyColors.map((c) => new BetterColor(color(c)));
     this.memo = new Map();
   }
 
@@ -41,4 +41,32 @@ class Palette {
     const i = Math.floor(map(pos, 0, 1, 0, this.keyColors.length - 1));
     return constrain(i, 0, this.keyColors.length - 2);
   }
+}
+
+class BetterColor {
+	_color;
+	
+	constructor(c) {
+		this._color = c;
+	}
+	
+	toString(format) {
+		return this._color.toString(format);
+	}
+	
+	setRed(newRed) {
+		this._color.setRed(newRed);
+	}
+	
+	setGreen(newGreen) {
+		this._color.setGreen(newGreen);
+	}
+	
+	setBlue(newBlue) {
+		this._color.setBlue(newBlue);
+	}
+	
+	setAlpha(newAlpha) {
+		this._color.setAlpha(newAlpha);
+	}
 }
