@@ -44,29 +44,33 @@ class Palette {
 }
 
 class BetterColor {
-	_color;
-	
-	constructor(c) {
-		this._color = c;
-	}
-	
-	toString(format) {
-		return this._color.toString(format);
-	}
-	
-	setRed(newRed) {
-		this._color.setRed(newRed);
-	}
-	
-	setGreen(newGreen) {
-		this._color.setGreen(newGreen);
-	}
-	
-	setBlue(newBlue) {
-		this._color.setBlue(newBlue);
-	}
-	
-	setAlpha(newAlpha) {
-		this._color.setAlpha(newAlpha);
-	}
+  _color;
+
+  constructor(c) {
+   this._color = c;
+  }
+  
+  get levels() {
+    this._color.levels;
+  }
+
+  toString(format) {
+    return this._color.toString(format);
+  }
+
+  setRed(newRed) {
+   this._color.setRed(newRed);
+  }
+
+  setGreen(newGreen) {
+    this._color.setGreen(newGreen);
+  }
+
+  setBlue(newBlue) {
+    this._color.setBlue(newBlue);
+  }
+
+  setAlpha(newAlpha) {
+    this._color.setAlpha(newAlpha);
+  }
 }
