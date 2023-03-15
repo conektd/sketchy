@@ -96,7 +96,7 @@ const NAMED_PALETTES = [
 ];
 
 for (const {colors} of NAMED_PALETTES) {
-  PALETTES.push(color);
+  PALETTES.push(colors);
 }
 
 
