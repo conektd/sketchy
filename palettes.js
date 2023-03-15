@@ -36,7 +36,7 @@ const PALETTES = [
   ],
 ];
 
-const NAMES_PALETTES = [
+const NAMED_PALETTES = [
   {
     name: "Benedictus",
     colors: ["#F27EA9", "#366CD9", "#5EADF2", "#636E73", "#F2E6D8"],
